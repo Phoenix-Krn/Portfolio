@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    --background: 240 10% 4%;
+    --foreground: 0 0% 95%;
+
+    --card: 240 10% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 240 10% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 180 100% 50%;
+    --primary-foreground: 240 10% 4%;
+
+    --secondary: 300 100% 60%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 240 10% 15%;
+    --muted-foreground: 240 5% 55%;
+
+    --accent: 270 100% 65%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 180 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom neon colors */
+    --neon-cyan: 180 100% 50%;
+    --neon-magenta: 300 100% 60%;
+    --neon-purple: 270 100% 65%;
+    --neon-pink: 330 100% 65%;
+
+    /* Gradients */
+    --gradient-neon: linear-gradient(135deg, hsl(var(--neon-cyan)), hsl(var(--neon-magenta)));
+    --gradient-glow: linear-gradient(135deg, hsl(var(--neon-cyan) / 0.2), hsl(var(--neon-magenta) / 0.2));
+
+    /* Shadows */
+    --glow-cyan: 0 0 20px hsl(var(--neon-cyan) / 0.5), 0 0 40px hsl(var(--neon-cyan) / 0.3);
+    --glow-magenta: 0 0 20px hsl(var(--neon-magenta) / 0.5), 0 0 40px hsl(var(--neon-magenta) / 0.3);
+    --glow-mixed: 0 0 30px hsl(var(--neon-cyan) / 0.4), 0 0 60px hsl(var(--neon-magenta) / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-neon);
+  }
+
+  .glow-border {
+    @apply border border-primary/30;
+    box-shadow: var(--glow-cyan);
+  }
+
+  .glow-border-magenta {
+    @apply border border-secondary/30;
+    box-shadow: var(--glow-magenta);
+  }
+
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-xl border border-border/50 rounded-xl;
+  }
+
+  .neon-badge {
+    @apply px-3 py-1.5 rounded-full text-sm font-medium border;
+    background: hsl(var(--neon-cyan) / 0.1);
+    border-color: hsl(var(--neon-cyan) / 0.4);
+    color: hsl(var(--neon-cyan));
+  }
+
+  .neon-badge-magenta {
+    @apply px-3 py-1.5 rounded-full text-sm font-medium border;
+    background: hsl(var(--neon-magenta) / 0.1);
+    border-color: hsl(var(--neon-magenta) / 0.4);
+    color: hsl(var(--neon-magenta));
+  }
+
+  .floating-particle {
+    @apply absolute rounded-full opacity-20;
+    background: hsl(var(--neon-cyan) / 0.5);
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20;
+  }
+
+  .nav-link {
+    @apply relative px-4 py-2 text-muted-foreground hover:text-foreground transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transition-all duration-300 -translate-x-1/2;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+}
+
+@layer utilities {
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(5deg);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: var(--glow-cyan);
+    }
+    50% {
+      box-shadow: 0 0 30px hsl(var(--neon-cyan) / 0.7), 0 0 60px hsl(var(--neon-cyan) / 0.5);
+    }
+  }
+
+  @keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink {
+    0%, 50% { border-color: transparent; }
+    51%, 100% { border-color: hsl(var(--neon-cyan)); }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float 6s ease-in-out infinite 2s;
+  }
+
+  .animate-float-slow {
+    animation: float 8s ease-in-out infinite 1s;
+  }
+}
