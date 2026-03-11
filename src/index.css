@@ -46,8 +46,17 @@
     --neon-purple: 270 100% 65%;
     --neon-pink: 330 100% 65%;
 
+    /* Galaxy theme colors */
+    --galaxy-purple: 270 100% 65%;
+    --galaxy-violet: 280 90% 60%;
+    --galaxy-blue: 250 100% 70%;
+    --galaxy-pink: 290 100% 65%;
+    --cosmic-glow: 260 100% 70%;
+
     /* Gradients */
     --gradient-neon: linear-gradient(135deg, hsl(var(--neon-cyan)), hsl(var(--neon-magenta)));
+    --gradient-galaxy: linear-gradient(135deg, hsl(var(--galaxy-purple)), hsl(var(--galaxy-blue)));
+    --gradient-cosmic: linear-gradient(135deg, hsl(var(--galaxy-violet)), hsl(var(--galaxy-pink)), hsl(var(--cosmic-glow)));
     --gradient-glow: linear-gradient(135deg, hsl(var(--neon-cyan) / 0.2), hsl(var(--neon-magenta) / 0.2));
 
     /* Shadows */
@@ -159,6 +168,15 @@
     51%, 100% { border-color: hsl(var(--neon-cyan)); }
   }
 
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
   .animate-pulse-glow {
     animation: pulse-glow 2s ease-in-out infinite;
   }
@@ -174,4 +192,95 @@
   .animate-float-slow {
     animation: float 8s ease-in-out infinite 1s;
   }
+
+  .animate-shimmer {
+    animation: shimmer 3s linear infinite;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(var(--neon-cyan) / 0.2) 50%,
+      transparent 100%
+    );
+    background-size: 1000px 100%;
+  }
+
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(hsl(var(--neon-cyan) / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--neon-cyan) / 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Pulse animation */
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--neon-cyan) / 0.5);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(var(--neon-cyan) / 0.8), 0 0 60px hsl(var(--neon-magenta) / 0.5);
+    }
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Floating animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Typewriter cursor */
+  @keyframes blink {
+    0%, 49% {
+      opacity: 1;
+    }
+    50%, 100% {
+      opacity: 0;
+    }
+  }
+
+  .cursor-blink {
+    animation: blink 1s step-end infinite;
+  }
+
+  /* Galaxy themed animations */
+  @keyframes galaxy-pulse {
+    0%, 100% {
+      box-shadow: 0 0 30px hsl(var(--galaxy-purple) / 0.5), 0 0 60px hsl(var(--galaxy-violet) / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 50px hsl(var(--galaxy-purple) / 0.8), 0 0 100px hsl(var(--galaxy-pink) / 0.5);
+    }
+  }
+
+  .galaxy-glow {
+    animation: galaxy-pulse 3s ease-in-out infinite;
+  }
+
+  /* Cosmic sparkle effect */
+  @keyframes cosmic-sparkle {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.5);
+    }
+  }
+
+  .cosmic-sparkle {
+    animation: cosmic-sparkle 2s ease-in-out infinite;
+  }
 }
+

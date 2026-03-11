@@ -2,39 +2,40 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Briefcase, Calendar } from "lucide-react";
+import Tilt3DCard from "./Tilt3DCard";
 
 const experiences = [
     {
-    title: "BFSI Trainee",
+    title: "BFSI Consortium Trainee",
     company: "BFSI Consortium",
-    period: "Sept 2025 - Present",
+    period: "Sept 2025 – Feb 2026",
     description: [
-      "Banking (Commercial & Investment Banking, Asset Classes, Securitization, Derivatives)",
-      "Financial Services (Money Markets, Collective Investment Vehicles, Alternative Investments, Forex Market, Modern Portfolio Theory (MPT))",
-      "Insurance (Insurance Fundamentals)"
+      "Learned core BFSI concepts with exposure to banking, financial markets, investments, insurance, derivatives, securitization, MPT, forex, and money markets",
+      "Banking: Commercial & Investment Banking, Asset Classes, Securitization, Derivatives",
+      "Financial Services: Money Markets, Collective Investment Vehicles, Alternative Investments, Forex Market, Modern Portfolio Theory"
     ],
-    skills: ["Banking", "Python", "Finanacial Services","Cloud","Insuarance"],
+    skills: ["Banking", "Financial Services", "Insurance", "Derivatives", "Risk Management"],
   },
   {
-    title: "Internship - AI-Data Quality Analyst",
+    title: "AI Data Quality Analyst",
     company: "Rooman Technologies",
-    period: "September 2024 - March 2025",
-    description: "Built a dashboard using Dash and Plotly for sales data visualization; automated AI dataset quality monitoring.",
-    skills: ["Data Engineer", "Data Visualization & Analytics", "AI-driven Data Quality Monitoring"],
+    period: "Sep 2024 – Mar 2025",
+    description: "Built Dash/Plotly dashboards for sales analysis; automated monitoring of AI dataset quality; implemented data validation pipelines",
+    skills: ["Python", "Dash", "Plotly", "Data Visualization", "AI/ML"],
   },
   {
-    title: "Data Science",
-    company: "Cranes Varsity",
-    period: "Oct 2023 - Nov 2023",
-    description: "Performed EDA on IPL dataset using Pandas and Matplotlib; built dashboards for visualization.",
-    skills: ["Python", "EDA", "Visualization", "Machiene Learning"],
-  },
-  {
-    title: "Soft Skill Trainee",
+    title: "Soft Skills Trainee",
     company: "Wadhwani Foundation",
-    period: "September 2024 - March 2025",
-    description: "Trained in leadership, communication, and digital tools.",
-    skills: ["Team Player" ,"Adaptable", "CRM", "Communication"],
+    period: "Sep 2024 – Mar 2025",
+    description: "Trained in leadership, communication, and digital tools; developed interpersonal and team collaboration skills",
+    skills: ["Leadership", "Communication", "Team Building", "Digital Tools"],
+  },
+  {
+    title: "Data Science Intern",
+    company: "Cranes Varsity - Bengaluru",
+    period: "Oct 2023 – Nov 2023",
+    description: "Performed EDA on IPL dataset using Pandas and Matplotlib; built dashboards for visualization; analyzed cricket performance metrics",
+    skills: ["Python", "Pandas", "Matplotlib", "EDA", "Data Visualization"],
   }
 ];
 
@@ -43,7 +44,7 @@ const ExperienceSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="experience" className="relative py-24 overflow-hidden">
+    <section className="relative py-24 overflow-hidden">
       <div className="section-container" ref={ref}>
         {/* Section Header */}
         <motion.div
@@ -87,34 +88,36 @@ const ExperienceSection = () => {
               </motion.div>
 
               {/* Content Card */}
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                className="glass-card p-6"
-              >
-                <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
-                  <div>
-                    <h3 className="text-xl font-semibold">{exp.title}</h3>
-                    <p className="text-primary font-medium">{exp.company}</p>
+              <Tilt3DCard>
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  className="glass-card glow-border p-6"
+                >
+                  <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
+                    <div>
+                      <h3 className="text-xl font-semibold">{exp.title}</h3>
+                      <p className="text-primary font-medium">{exp.company}</p>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <Calendar className="w-4 h-4" />
+                      {exp.period}
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Calendar className="w-4 h-4" />
-                    {exp.period}
+
+                  <p className="text-muted-foreground mb-4">{exp.description}</p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {exp.skills.map((skill, skillIndex) => (
+                      <span
+                        key={skill}
+                        className={skillIndex % 2 === 0 ? "neon-badge" : "neon-badge-magenta"}
+                      >
+                        {skill}
+                      </span>
+                    ))}
                   </div>
-                </div>
-
-                <p className="text-muted-foreground mb-4">{exp.description}</p>
-
-                <div className="flex flex-wrap gap-2">
-                  {exp.skills.map((skill, skillIndex) => (
-                    <span
-                      key={skill}
-                      className={skillIndex % 2 === 0 ? "neon-badge" : "neon-badge-magenta"}
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
+                </motion.div>
+              </Tilt3DCard>
             </motion.div>
           ))}
         </div>

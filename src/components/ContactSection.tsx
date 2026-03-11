@@ -15,7 +15,7 @@ const contactInfo = [
 
 const socialLinks = [
   { icon: Github, label: "GitHub", href: "https://github.com/Phoenix-Krn" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/kavyaravinaik/" },,
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/kavyaravinaik/" },
 ];
 
 const ContactSection = () => {
@@ -43,7 +43,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="relative py-24 overflow-hidden">
+    <section className="relative py-24 overflow-hidden">
       <div className="section-container" ref={ref}>
         {/* Section Header */}
         <motion.div

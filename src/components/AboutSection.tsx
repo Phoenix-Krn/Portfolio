@@ -2,11 +2,13 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Github, Linkedin, Globe, GraduationCap, Gamepad, MapPin, Mail } from "lucide-react";
+import SkillsVisualization from "./SkillsVisualization";
+import InteractiveStats from "./InteractiveStats";
 
 const skills = [
-  "Python", "SQL", "HTML", "MongoDB", "Data Analysis", 
-  "excel", "Word", "Visualization", 
-  "AWS", "FinTech"
+  "Python", "SQL", "HTML", "Pandas", "Matplotlib", "Seaborn",
+  "Data Analysis", "Excel", "PowerPoint", "Visualization", 
+  "Machine Learning", "BFSI", "Dash", "Plotly", "Banking"
 ];
 
 const AboutSection = () => {
@@ -14,7 +16,7 @@ const AboutSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="relative py-24 overflow-hidden">
+    <section className="relative py-24 overflow-hidden">
       <div className="section-container" ref={ref}>
         {/* Section Header */}
         <motion.div
@@ -37,7 +39,7 @@ const AboutSection = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="glass-card p-8"
+            className="glass-card glow-border p-8"
           >
             <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start mb-6">
               {/* Avatar */}
@@ -45,8 +47,12 @@ const AboutSection = () => {
                 whileHover={{ scale: 1.05 }}
                 className="relative"
               >
-                <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center text-4xl font-bold gradient-text border border-primary/30">
-                  KRN
+                <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center text-4xl font-bold gradient-text border border-primary/30 overflow-hidden">
+                  <img
+                    src="images/profile.jpeg"
+                    alt="KRN - Kavya R Naik"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="absolute -bottom-2 -right-2 w-6 h-6 rounded-full bg-green-500 border-4 border-card" />
               </motion.div>
@@ -74,7 +80,7 @@ const AboutSection = () => {
                     <Linkedin className="w-4 h-4" />
                   </motion.a>
                   <motion.a
-                    href="#"
+                    href="#about"
                     whileHover={{ scale: 1.1 }}
                     className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
                   >
@@ -115,16 +121,14 @@ const AboutSection = () => {
           >
             {/* Bio */}
             <div className="glass-card p-6">
-              <h4 className="text-lg font-semibold mb-3 gradient-text">Aspiring Analyst</h4>
+              <h4 className="text-lg font-semibold mb-3 gradient-text">Professional Summary</h4>
               <p className="text-muted-foreground leading-relaxed">
-                A Computer Science Engineering student with strong skills in Python, data analysis, AI, 
-                visualization and reporting. Worked with real-world projects, dashboard development, research publications, 
-                and patent filing. Knowledgeable in BFSI domain fundamentals, digital banking, data governance, and fraud 
-                analysis. Adept at problem-solving, teamwork, and continuous learning. Seeking an entry-level role in BFSI 
-                Analytics / Data Analyst / Risk Analyst to contribute to data-driven decision-making
+                Results-oriented Computer Science Engineering graduate from HKBK College with strong expertise in Python, data analysis, AI, and visualization. 
+                Experienced in BFSI domain fundamentals including banking, financial services, and insurance.
               </p>
               <p className="text-muted-foreground leading-relaxed mt-3">
-                Driven by curiosity, I’m building my foundation in tech through continuous learning and real-world problem solving.
+                Proficient in dashboard development using Dash and Plotly, real-world project implementation, research publications, and patent filing with IPI. 
+                Adept at problem-solving, teamwork, and continuous learning with focus on data-driven decision-making.
               </p>
             </div>
 
@@ -138,7 +142,8 @@ const AboutSection = () => {
                   <GraduationCap className="w-5 h-5" />
                   <span className="text-sm font-medium">Education</span>
                 </div>
-                <p className="text-sm text-muted-foreground">B.E. Computer Science And Engineering</p>
+                <p className="text-sm text-muted-foreground">B.E(Hons). CSE (HKBK)</p>
+                <p className="text-xs text-muted-foreground">CGPA: 8.68</p>
               </motion.div>
 
               <motion.div
@@ -147,9 +152,9 @@ const AboutSection = () => {
               >
                 <div className="flex items-center gap-2 text-secondary mb-2">
                   <Gamepad className="w-5 h-5" />
-                  <span className="text-sm font-medium">Hobbies</span>
+                  <span className="text-sm font-medium">BFSI Focus</span>
                 </div>
-                <p className="text-sm text-muted-foreground">Reading, Music, Art & Craft</p>
+                <p className="text-sm text-muted-foreground">Banking, Finance, Insurance</p>
               </motion.div>
 
               <motion.div
@@ -171,9 +176,29 @@ const AboutSection = () => {
                   <MapPin className="w-5 h-5" />
                   <span className="text-sm font-medium">Location</span>
                 </div>
-                <p className="text-sm text-muted-foreground">Bengaluru, IN</p>
+                <p className="text-sm text-muted-foreground">Bengaluru, India</p>
               </motion.div>
             </div>
+
+            {/* Skills Visualization */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="glass-card p-6"
+            >
+              <h4 className="text-lg font-semibold mb-6 gradient-text">Technical Proficiency</h4>
+              <SkillsVisualization />
+            </motion.div>
+
+            {/* Interactive Stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <InteractiveStats />
+            </motion.div>
           </motion.div>
         </div>
       </div>

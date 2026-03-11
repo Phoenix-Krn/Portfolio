@@ -27,6 +27,11 @@ const colors = [
   "hsl(60, 100%, 60%)",  // neon yellow
   "hsl(200, 100%, 70%)", // neon blue
   "hsl(120, 100%, 55%)", // neon green
+  "hsl(0, 100%, 65%)",   // neon red
+  "hsl(30, 100%, 60%)",  // neon orange
+  "hsl(270, 100%, 70%)", // neon purple
+  "hsl(330, 100%, 70%)", // neon pink
+  "hsl(90, 100%, 60%)",  // neon lime
 ];
 
 const FloatingParticles = () => {

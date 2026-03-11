@@ -1,15 +1,19 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Instagram, ArrowDown, Folder, MessageSquare } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Github, Linkedin, Mail, ArrowDown, Folder, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import TypewriterText from "./TypewriterText";
-import FloatingParticles from "./FloatingParticles";
+import MagneticButton from "./MagneticButton";
+import ResumeDownload from "./ResumeDownload";
+import HeroStats from "./HeroStats";
 
 const skills = [
   "Python",
-  "HTML & CSS",
   "SQL",
-  "Analytics",
-  "Data Visualization"
+  "Data Analysis",
+  "Visualization",
+  "Machine Learning",
+  "BFSI Domain"
 ];
 
 const socialLinks = [
@@ -18,29 +22,9 @@ const socialLinks = [
   { icon: Mail, href: "mailto:kavyaravinaik2003@gmail.com", label: "Email" },
 ];
 
-const stats = [
-  { value: "", label: "" },
-  { value: "", label: "" },
-];
-
 const HeroSection = () => {
-  const scrollToProjects = () => {
-    const element = document.querySelector("#projects");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const scrollToContact = () => {
-    const element = document.querySelector("#contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      <FloatingParticles />
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       
       <div className="section-container relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -66,16 +50,16 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold gradient-text"
+              className="text-5xl sm:text-6xl lg:text-7xl font-bold relative z-20"
             >
-              Kavya R Naik 
+              <span className="gradient-text">Kavya R Naik</span>
             </motion.h1>
 
             {/* Typewriter Title */}
             <div className="flex items-center gap-2 font-mono text-lg text-muted-foreground">
               <span className="text-primary">{">"}</span>
               <TypewriterText
-                texts={["Python Developer", "BI Analyst", "Team player", "Enthusiast"]}
+                texts={["Data Analyst", "BFSI Expert", "AI Enthusiast", "Problem Solver"]}
               />
             </div>
 
@@ -86,9 +70,8 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.7 }}
               className="text-muted-foreground text-lg max-w-xl leading-relaxed"
             >
-            I am a passionate Computer Science and Engineering student with a strong interest in Data Science, AI, Analytics, and Software Development. 
-            I enjoy creating innovative solutions that enhance user experiences, improve processes, and deliver meaningful business insights.
-
+              A Computer Science Engineering graduate with strong expertise in Python, data analysis, AI, and visualization. 
+              Experienced in BFSI domain, dashboard development and research publications. Seeking entry-level role in BFSI Analytics / Data Analyst to drive data-driven decision-making.
             </motion.p>
 
             {/* Skill Badges */}
@@ -111,6 +94,9 @@ const HeroSection = () => {
               ))}
             </motion.div>
 
+            {/* Hero Stats */}
+            <HeroStats />
+
             {/* CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -118,24 +104,31 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 1 }}
               className="flex flex-wrap gap-4"
             >
-              <Button
-                onClick={scrollToProjects}
-                variant="neon"
-                size="lg"
-                className="gap-2"
-              >
-                <Folder className="w-4 h-4" />
-                View Projects
-              </Button>
-              <Button
-                onClick={scrollToContact}
-                variant="neonOutline"
-                size="lg"
-                className="gap-2"
-              >
-                <MessageSquare className="w-4 h-4" />
-                Contact Me
-              </Button>
+              <ResumeDownload variant="neon" />
+              <Link to="/projects">
+                <MagneticButton>
+                  <Button
+                    variant="neon"
+                    size="lg"
+                    className="gap-2"
+                  >
+                    <Folder className="w-4 h-4" />
+                    View Projects
+                  </Button>
+                </MagneticButton>
+              </Link>
+              <Link to="/contact">
+                <MagneticButton>
+                  <Button
+                    variant="neonOutline"
+                    size="lg"
+                    className="gap-2"
+                  >
+                    <MessageSquare className="w-4 h-4" />
+                    Contact Me
+                  </Button>
+                </MagneticButton>
+              </Link>
             </motion.div>
 
             {/* Social Links */}
@@ -171,69 +164,31 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 1.3 }}
               className="flex gap-4 pt-6"
             >
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, delay: 1.4 + index * 0.1 }}
-                  className="glass-card px-6 py-4 text-center"
-                >
-                  <div className="text-2xl font-bold gradient-text">{stat.value}</div>
-                  <div className="text-xs text-muted-foreground mt-1">{stat.label}</div>
-                </motion.div>
-              ))}
+              {/* Add stats data here when available */}
             </motion.div>
           </motion.div>
 
-          {/* Right Content - 3D Sphere/Visual */}
+          {/* Right Content - Profile Picture */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
             className="hidden lg:flex items-center justify-center"
           >
-            <div className="relative w-96 h-96">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="relative w-80 h-80 rounded-2xl overflow-hidden glow-border bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center"
+            >
               {/* Outer glow ring */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/20 via-secondary/20 to-accent/20 blur-3xl animate-pulse" />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-primary/20 via-secondary/20 to-accent/20 blur-3xl animate-pulse" />
               
-              {/* Main sphere */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-8 rounded-full border border-primary/30"
-                style={{
-                  background: "radial-gradient(circle at 30% 30%, hsl(var(--neon-cyan) / 0.1), transparent 60%)",
-                  boxShadow: "0 0 60px hsl(var(--neon-cyan) / 0.3), inset 0 0 60px hsl(var(--neon-magenta) / 0.1)",
-                }}
-              >
-                {/* Grid lines */}
-                <div className="absolute inset-0 rounded-full overflow-hidden opacity-30">
-                  {[...Array(6)].map((_, i) => (
-                    <div
-                      key={`h-${i}`}
-                      className="absolute w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"
-                      style={{ top: `${20 + i * 12}%` }}
-                    />
-                  ))}
-                  {[...Array(8)].map((_, i) => (
-                    <div
-                      key={`v-${i}`}
-                      className="absolute h-full w-px bg-gradient-to-b from-transparent via-secondary/50 to-transparent"
-                      style={{ left: `${12.5 * (i + 1)}%` }}
-                    />
-                  ))}
-                </div>
-              </motion.div>
-
-              {/* Orbital ring */}
-              <motion.div
-                animate={{ rotate: -360 }}
-                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-4 rounded-full border border-secondary/20"
-                style={{ transform: "rotateX(60deg)" }}
+              {/* Profile Image */}
+              <img
+                src="images/profile.jpeg"
+                alt="KRN - Kavya R Naik"
+                className="w-full h-full object-cover relative z-10"
               />
-            </div>
+            </motion.div>
           </motion.div>
         </div>
 
@@ -244,14 +199,15 @@ const HeroSection = () => {
           transition={{ delay: 2 }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
         >
-          <motion.button
-            onClick={() => document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" })}
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-10 h-10 rounded-full border border-border/50 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"
-          >
-            <ArrowDown className="w-5 h-5" />
-          </motion.button>
+          <Link to="/about">
+            <motion.button
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="w-10 h-10 rounded-full border border-border/50 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"
+            >
+              <ArrowDown className="w-5 h-5" />
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>
