@@ -13,7 +13,7 @@ const PortfolioContext = createContext<PortfolioContextType | undefined>(
 export const PortfolioProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [isMultiPage, setIsMultiPage] = useState(() => {
+  const [isMultiPage, setIsMultiPage] = useState<boolean>(() => {
     const saved = localStorage.getItem("portfolioMode");
     return saved ? JSON.parse(saved) : true;
   });
