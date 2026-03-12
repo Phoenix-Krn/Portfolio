@@ -2,7 +2,7 @@
 
 ## 🎯 **Dual-Mode Portfolio System**
 
-Your portfolio now supports **two viewing modes** that users can toggle between:
+This portfolio supports **two viewing modes** that users can toggle between:
 
 ### **1. Multi-Page Mode** (Default)
 - Traditional multi-page setup with navigation via URL routing
@@ -73,72 +73,6 @@ Your portfolio now supports **two viewing modes** that users can toggle between:
 
 ---
 
-## 📄 **Resume Data Integration**
-
-Your portfolio now reflects your actual resume:
-
-### **Personal Information**
-- Name: Kavya R Naik
-- Location: Bengaluru, India
-- Email: kavyaravinaik2003@gmail.com
-- Phone: +91 8317379307
-- LinkedIn: linkedin.com/in/kavyaravinaik
-- GitHub: github.com/Phoenix-Krn
-
-### **Education**
-- B.E. Computer Science & Engineering (HKBK College)
-- CGPA: 8.68
-- Pre-University: 90.03%
-
-### **Technical Skills**
-- Languages: Python, SQL, HTML
-- Tools: Excel, PowerPoint, Pandas, Matplotlib, Seaborn
-- Specialization: Data Analysis, Visualization, BFSI Domain
-- Dashboard Tools: Dash, Plotly
-
-### **Experience**
-1. **BFSI Consortium Trainee** (Sept 2025 - Feb 2026)
-   - Banking, Financial Services, Insurance fundamentals
-   - Derivatives, Securitization, Money Markets
-
-2. **AI Data Quality Analyst** (Rooman Technologies, Sept 2024 - Mar 2025)
-   - Dashboard development with Dash/Plotly
-   - AI dataset quality monitoring
-
-3. **Soft Skills Trainee** (Wadhwani Foundation, Sept 2024 - Mar 2025)
-   - Leadership, Communication, Digital Tools
-
-4. **Data Science Intern** (Cranes Varsity, Oct 2023 - Nov 2023)
-   - IPL data analysis and visualization
-
-### **Projects** (5 Featured)
-1. Real-Time Transaction Monitoring Dashboard
-2. Brain Tumor Detection and Segmentation
-3. Automating Data Quality Monitoring in Cloud Warehouses
-4. Cricket Data Analysis and Visualization
-5. Toll-Payment-using-Solidity-Blockchain
-
-### **Certifications** (10 Total)
-- BFSI Consortium Trainee (ELP – 360 hrs)
-- AI Data Quality Analyst – NSQF Level 5
-- AI Data Quality Analyst – On-the-Job Training
-- Introduction to Cloud
-- Life Skills (Jeevan Kaushal 2.0)
-- Python 101 for Data Science
-- AI: Search Methods for Problem Solving
-- Data Science with AIML
-- Introduction to MongoDB
-- Python Tkinter
-
-### **Publications**
-1. Deep Learning Framework with Explainable AI for Brain Tumor Segmentation (ICISCN-2025)
-2. Revolutionizing AI in Banking Security (ICRET-2024)
-
-### **Patents**
-1. Enhancing Emergency Response Vehicles with Explainable AI Windshield Technology (IPI - Granted)
-
----
-
 ## 🎨 **Design & Animation Features**
 
 ### **Galaxy-Themed Background**
@@ -194,33 +128,5 @@ npm run build
 # Preview Build
 npm run preview
 ```
-
-**Build Status:** ✅ No errors
-**Bundle Size:** 481.91 KB (142.24 KB gzipped)
-
----
-
-## 🔒 **Persistence Features**
-
-- Portfolio mode preference saved to localStorage
-- Smooth navigation history
-- Auto-scroll position management
-- Section tracking on single-page mode
-
----
-
-## 🎯 **Summary**
-
-Your portfolio now features:
-- ✅ Dual-mode (Multi/Single page) viewing
-- ✅ All resume data integrated
-- ✅ 5 advanced navigation systems
-- ✅ Cosmic space theme with animations
-- ✅ Mobile-responsive design
-- ✅ Keyboard shortcuts (Cmd/Ctrl + K)
-- ✅ Smooth transitions and effects
-- ✅ Professional dark mode
-- ✅ Persistent user preferences
-- ✅ Zero build errors
 
 **Ready to impress! 🚀**
