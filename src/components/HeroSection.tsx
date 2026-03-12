@@ -42,7 +42,7 @@ const HeroSection = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="w-24 h-24 rounded-2xl glow-border flex items-center justify-center font-mono text-2xl font-bold gradient-text"
             >
-              {"<YN/>"}
+              {"KRN"}
             </motion.div>
 
             {/* Name */}

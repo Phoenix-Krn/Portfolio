@@ -43,7 +43,7 @@ const LoadingScreen = () => {
               }}
               className="w-24 h-24 mx-auto mb-8 rounded-2xl glow-border flex items-center justify-center font-mono text-3xl font-bold gradient-text"
             >
-              {"</>"}
+              {"."}{"."}{"."}{"."}
             </motion.div>
 
             {/* Loading Text */}

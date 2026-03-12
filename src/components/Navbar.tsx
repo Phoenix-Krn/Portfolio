@@ -40,7 +40,7 @@ const Navbar = () => {
               className="flex items-center gap-3 cursor-pointer"
             >
               <div className="w-10 h-10 rounded-lg glow-border flex items-center justify-center font-mono font-bold gradient-text">
-                {"</>"}
+                {"KRN"}
               </div>
               <span className="font-semibold text-foreground hidden sm:block">
                 Portfolio
