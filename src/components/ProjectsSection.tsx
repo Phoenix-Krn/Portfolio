@@ -9,7 +9,7 @@ const projects = [
   {
     title: "Real Time Transaction Monitoring Dashboard",
     description: "Developed a real-time transaction monitoring dashboard to detect anomalies, track fraud patterns, and provide actionable insights for BFSI analytics.",
-    image: "images/fraud_dashboard.png",
+    image: `${import.meta.env.BASE_URL}images/fraud_dashboard.png`,
     tech: ["Python", "Visualization", "Simulation", "Dashboard"],
     github: "https://github.com/Phoenix-Krn/Real-Time-Transaction-Monitoring-Dashboard",
     live: "https://real-time-transaction-monitoring-dashboard-rxrpjdvkkxprkcz9abh.streamlit.app/",
@@ -18,7 +18,7 @@ const projects = [
   {
     title: "Brain Tumor Detection and Survival Prediction",
     description: "Developed a Streamlit-based medical AI app for 3D MRI tumor segmentation and survival prediction using 3D U‑Net and Random Forest models.",
-    image: "images/brain_dashboard.png",
+    image: `${import.meta.env.BASE_URL}images/brain_dashboard.png`,
     tech: ["Python", "Numpy", "Streamlit", "Machine Learning","3D U-Net", "Random Forest"],
     github: "https://github.com/Phoenix-Krn/Brain_Tumor_Detection_and_Survival_Prediction",
     live: "https://braintumorsurvivalandprediction.streamlit.app/",
@@ -27,7 +27,7 @@ const projects = [
   {
     title: "Automating Data Quality Monitoring in Cloud Data Warehouses with AI",
     description: "This project automates data quality monitoring for cloud data warehouses using AI. It analyzes supermarket sales data, detects anomalies, ensures data integrity, and generates insights through an interactive dashboard and web application.",
-    image: "images/monitoring_dashboard.png",
+    image: `${import.meta.env.BASE_URL}images/monitoring_dashboard.png`,
     tech: ["Python", "SQL", "Data Analysis", "Visualization", "AI"],
     github: "https://github.com/Phoenix-Krn/Automating-Data-Quality-Monitoring-in-Cloud-Data-Warehouses-with-AI",
     featured: true,
@@ -35,7 +35,7 @@ const projects = [
   {
     title: "Cricket Data Analysis and Visualization",
     description: "Analyzed IPL data with Python and created performance dashboards",
-    image: "images/cricket_dashboard.png",
+    image: `${import.meta.env.BASE_URL}images/cricket_dashboard.png`,
     tech: ["Python","EDA", "Data Analysis", "Visualization","pandas", "matplotlib", "seaborn"],
     github: "https://github.com/Phoenix-Krn/World-cup-cricket-data-analysis-and-visualization",
     featured: false,
@@ -43,7 +43,7 @@ const projects = [
   {
     title: "Toll-Payment-using-Solidity-Blockchain",
     description: "Developed a blockchain-based toll payment system using Solidity and Ethereum.",
-    image: "images/BlockChain-1.jpg",
+    image: `${import.meta.env.BASE_URL}images/BlockChain-1.jpg`,
     tech: ["Remix Solidity", "Ethereum", "Smart Contracts"],
     github: "https://github.com/Phoenix-Krn/Toll-Payment-using-Solidity-Blockchain",
     featured: false,

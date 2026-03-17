@@ -184,7 +184,7 @@ const HeroSection = () => {
               
               {/* Profile Image */}
               <img
-                src="images/profile.jpeg"
+                src={`${import.meta.env.BASE_URL}images/profile.jpeg`}
                 alt="KRN - Kavya R Naik"
                 className="w-full h-full object-cover relative z-10"
               />

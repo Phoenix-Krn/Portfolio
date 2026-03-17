@@ -49,7 +49,7 @@ const AboutSection = () => {
               >
                 <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center text-4xl font-bold gradient-text border border-primary/30 overflow-hidden">
                   <img
-                    src="images/profile.jpeg"
+                    src={`${import.meta.env.BASE_URL}images/profile.jpeg`}
                     alt="KRN - Kavya R Naik"
                     className="w-full h-full object-cover"
                   />

@@ -19,7 +19,7 @@ const featuredProjects: FeaturedProject[] = [
   {
     title: "Real Time Transaction Monitoring Dashboard",
     description: "Intelligent fraud detection system that analyzes transactions in real-time and identifies suspicious patterns",
-    image: "images/fraud_dashboard.png",
+    image: `${import.meta.env.BASE_URL}images/fraud_dashboard.png`,
     tech: ["Python", "Visualization", "Dashboard"],
     github: "https://github.com/Phoenix-Krn/Real-Time-Transaction-Monitoring-Dashboard",
     live: "https://real-time-transaction-monitoring-dashboard-rxrpjdvkkxprkcz9abh.streamlit.app/",
@@ -28,7 +28,7 @@ const featuredProjects: FeaturedProject[] = [
   {
     title: "Brain Tumor Detection and Survival Prediction",
     description: "AI-powered medical imaging tool using 3D deep learning for accurate tumor segmentation and survival analysis",
-    image: "images/brain_dashboard.png",
+    image: `${import.meta.env.BASE_URL}images/brain_dashboard.png`,
     tech: ["3D U-Net", "Random Forest", "Streamlit"],
     github: "https://github.com/Phoenix-Krn/Brain_Tumor_Detection_and_Survival_Prediction",
     live: "https://braintumorsurvivalandprediction.streamlit.app/",
@@ -37,7 +37,7 @@ const featuredProjects: FeaturedProject[] = [
   {
     title: "Automating Data Quality Monitoring in Cloud Data Warehouses with AI",
     description: "AI-Automating data quality monitoring for cloud data warehouses.",
-    image: "images/monitoring_dashboard.png",
+    image: `${import.meta.env.BASE_URL}images/monitoring_dashboard.png`,
     tech: ["Python", "SQL", "Data Analysis", "Visualization", "AI"],
     github: "https://github.com/Phoenix-Krn/Automating-Data-Quality-Monitoring-in-Cloud-Data-Warehouses-with-AI",
     live: "https://github.com/Phoenix-Krn/Automating-Data-Quality-Monitoring-in-Cloud-Data-Warehouses-with-AI",
