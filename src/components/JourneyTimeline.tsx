@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import { BookOpen, Zap, Award, Rocket, Target, Trophy } from "lucide-react";
+import { BookOpen, Zap, Award, Rocket, Target, Trophy, ShieldCheck } from "lucide-react";
 
 interface JourneyMilestone {
   year: string;
@@ -73,7 +73,7 @@ const milestones: JourneyMilestone[] = [
     color: "from-orange-500 to-rose-600",
   },
   {
-    year: "2025+",
+    year: "2025",
     phase: "Leadership",
     title: "Thought Leadership & Innovation",
     description: "Speaking and driving innovation in data-driven solutions",
@@ -85,6 +85,20 @@ const milestones: JourneyMilestone[] = [
       "Innovation Focus"
     ],
     color: "from-yellow-500 to-orange-600",
+  },
+  {
+    year: "2026",
+    phase: "Professional Experience",
+    title: "Compliance Apprentice at Deutsche Bank",
+    description: "Gained real-world experience supporting the Compliance team in a global banking environment",
+    icon: <ShieldCheck className="w-6 h-6" />,
+    achievements: [
+      "Deutsche Bank",
+      "Compliance Team",
+      "Banking Operations",
+      "Risk & Controls",
+    ],
+    color: "from-emerald-500 to-teal-600",
   },
 ];
 

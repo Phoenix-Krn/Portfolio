@@ -23,8 +23,8 @@ const AchievementsShowcase = () => {
     },
     {
       icon: <Zap className="w-6 h-6" />,
-      title: "Python Developer",
-      description: "Python, SQL, Analytics & Web Development",
+      title: "Python Enthusiast",
+      description: "Python, SQL, Analytics & Reporting",
       color: "text-cyan-400",
     },
     {

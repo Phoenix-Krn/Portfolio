@@ -59,7 +59,7 @@ const HeroSection = () => {
             <div className="flex items-center gap-2 font-mono text-lg text-muted-foreground">
               <span className="text-primary">{">"}</span>
               <TypewriterText
-                texts={["Data Analyst", "BFSI Expert", "AI Enthusiast", "Problem Solver"]}
+                texts={["Data Analyst", "BFSI Analyst", "Python Enthusiast", "Problem Solver"]}
               />
             </div>
 

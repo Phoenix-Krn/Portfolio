@@ -33,7 +33,7 @@ const Footer = () => {
             >
               <h3 className="text-lg font-bold gradient-text">Kavya R Naik</h3>
               <p className="text-sm text-muted-foreground">
-                Python Developer • Data Analyst • Tech Enthusiast
+                Python Enthusiast • Data Analyst • Data-driven Thinker
               </p>
               <p className="text-xs text-muted-foreground">
                 Building innovative solutions with data and code.

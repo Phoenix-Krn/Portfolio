@@ -18,7 +18,7 @@ const UniqueValueProposition = () => {
   const values: UniqueValue[] = [
     {
       icon: <Database className="w-8 h-8" />,
-      title: "Data-Driven Developer",
+      title: "Data-Driven Analyst",
       description: "I don't just code—I analyze. Every solution is backed by data insights and metrics.",
       color: "from-cyan-500 to-blue-600",
       highlight: "Why it matters: Decisions based on data lead to better outcomes",
@@ -48,7 +48,7 @@ const UniqueValueProposition = () => {
 
   const skillIntersection = [
     { skill: "Data Analysis", level: 95 },
-    { skill: "Python Development", level: 90 },
+    { skill: "Python & Analytics", level: 90 },
     { skill: "Business Intelligence", level: 88 },
     { skill: "Machine Learning", level: 85 },
     { skill: "Dashboard Design", level: 87 },
