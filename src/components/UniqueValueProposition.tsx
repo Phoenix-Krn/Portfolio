@@ -220,10 +220,10 @@ const UniqueValueProposition = () => {
                   Intelligence
                 </text>
 
-                {/* Center: You are here */}
+                {/* Center: I am here */}
                 <circle cx="150" cy="140" r="35" fill="hsl(270, 100%, 65%)" opacity="0.2" stroke="hsl(270, 100%, 65%)" strokeWidth="2" strokeDasharray="5,5" />
                 <text x="150" y="135" className="fill-foreground font-bold text-xs" textAnchor="middle">
-                  YOU ARE
+                  I AM
                 </text>
                 <text x="150" y="150" className="fill-foreground font-bold text-xs" textAnchor="middle">
                   HERE
